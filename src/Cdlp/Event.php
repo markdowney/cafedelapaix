@@ -13,16 +13,31 @@ class Event
 
     public function toArray ()
     {
+        $picture = null;
+        if (isset($this->data['cover']) && isset($this->data['cover']['source'])) {
+            $picture = $this->data['cover']['source'];
+        }
+
         return array(
             'name'        => $this->data['name'],
             'startTime'   => $this->data['start_time'],
-            'description' => $this->data['description'],
-            'picture'     => $this->data['cover']['source'],
+            'description' => isset($this->data['description']) ? $this->data['description'] : null,
+            'picture'     => $picture,
         );
     }
 
     public function getStartTime ()
     {
-        return \DateTime::createFromFormat(\DateTime::ATOM, $this->data['start_time']);
+        $startTime = $this->formatDate(\DateTime::ATOM, $this->data['start_time']);
+        if ($startTime === FALSE) {
+            $startTime = $this->formatDate('Y-m-d', $this->data['start_time']);
+        }
+
+        return $startTime;
+    }
+
+    private function formatDate ($format, $date)
+    {
+        return \DateTime::createFromFormat($format, $date);
     }
 }

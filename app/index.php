@@ -6,10 +6,7 @@ use Cdlp\FacebookPage,
     Cdlp\Event;
 
 $app = new Silex\Application();
-
-$app->get('/', function() use($app) {
-    return $app->sendFile('index.html');
-});
+$app['debug'] = true;
 
 $app->get('/events.json', function() use($app) {
     $facebookPage = new FacebookPage();

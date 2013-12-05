@@ -1,0 +1,41 @@
+.header {
+	height: 80px;
+	background-color: rgba(0,0,0, 0.8);
+	top: $gutter;
+    left: $gutter;
+    right: $gutter;
+	position: fixed;
+	z-index: 10;
+}
+
+
+.navigation {
+
+	text-align: center;
+	margin-top: 30px;
+	padding: 0;
+
+	li {
+			display: inline-block;
+			margin-right: 80px;
+			color: white;
+			text-transform: uppercase;
+			letter-spacing: 4px;
+			opacity: 1;
+
+			a {
+				color: white;
+				text-decoration: none;
+			}
+	}
+
+	li:last-child {
+		margin-right: 0;
+	}
+}
+
+.fb-like {
+	position: absolute !important;
+	bottom: 25px;
+	left: 25px;
+}

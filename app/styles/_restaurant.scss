@@ -1,0 +1,28 @@
+.restaurant {
+	position: absolute;
+	top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+	@include full-background-image("../images/upstairs-tables.jpg");
+}
+
+.text-container {
+	color: black;	
+	background-color: rgba(255,255,255,0.9);
+	width: 60%;
+	margin: auto;
+	height: 60%;
+	margin-top: 200px;
+
+	h2 {
+		padding-top: 1em;
+		text-align: center;
+	}
+
+}
+
+hr {
+	width: 100px;
+	color: black;
+}

@@ -1,0 +1,7 @@
+temp
+dist
+.DS_Store
+_site
+node_modules
+.sass-cache
+app/styles/main.css

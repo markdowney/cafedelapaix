@@ -1,0 +1,32 @@
+.landing {
+	position: absolute;
+	top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+	@include full-background-image("../images/cafe.jpg");
+
+
+
+    .logo {
+
+        height: 400px;
+        width: 400px;
+        @include border-radius(200px);
+        margin: auto;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-left: -200px;
+        margin-top: -200px;
+
+        background: {
+            image: url('../images/logo.png');
+            position: 50% 50%;
+            color: rgba(0,0,0,0.9);
+            repeat: no-repeat;
+        } 
+    }
+
+}
+

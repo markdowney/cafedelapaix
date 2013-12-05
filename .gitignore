@@ -5,3 +5,6 @@ _site
 node_modules
 .sass-cache
 app/styles/main.css
+/vendor
+/npm-debug.log
+/composer.phar

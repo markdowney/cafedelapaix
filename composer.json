@@ -1,0 +1,20 @@
+{
+    "name": "cafe-de-la-paix",
+    "require": {
+        "php": ">=5.3.0",
+        "silex/silex": "~1.1",
+        "doctrine/dbal": "2.2.*",
+        "facebook/php-sdk" : "*"
+    },
+    "autoload": {
+        "psr-0": {
+            "Cdlp": "src/"
+        }
+    },
+    "extra": {
+        "heroku": {
+            "document-root": "app",
+            "index-document": "index.php"
+        }
+    }
+}

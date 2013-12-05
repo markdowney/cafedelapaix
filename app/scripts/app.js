@@ -1,8 +1,7 @@
-define(["jquery","backbone","marionette", "views/pages/landing", "views/pages/restaurant",
-    "views/pages/tessera","views/pages/contact", "views/pages/events", "views/controls/header",
+define(["jquery","backbone","marionette", "views/pages/landing", "views/controls/header",
     "tools/marionette.override"],
 
-    function($,Backbone, Marionette, LandingPage, RestaurantPage, TesseraPage, ContactPage, EventsPage, Header){
+    function($,Backbone, Marionette, LandingPage, Header){
 
         // set up the app instance
         var application = new Marionette.Application();
@@ -20,29 +19,11 @@ define(["jquery","backbone","marionette", "views/pages/landing", "views/pages/re
             var ApplicationRouter = Backbone.Router.extend({
 
                 routes: {
-                    "eventi" : "events",
-                    "contacti" : "contact",
-                    "restaurante" : "restaurant",
-                    "tessera" : "tessera",
                     ".*": "landing"
                 },
 
                 landing: function() {
                     application.mainRegion.show(new LandingPage());
-                },
-
-                events: function(){
-                    application.mainRegion.show(new EventsPage());
-                },
-
-                contact: function() {
-                    application.mainRegion.show(new ContactPage());
-                },
-                restaurant: function() {
-                    application.mainRegion.show(new RestaurantPage());
-                },
-                tessera: function() {
-                    application.mainRegion.show(new TesseraPage());
                 }
             });
 

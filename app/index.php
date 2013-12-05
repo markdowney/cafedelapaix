@@ -5,6 +5,8 @@ require_once __DIR__.'/../vendor/autoload.php';
 use Cdlp\FacebookPage,
     Cdlp\Event;
 
+date_default_timezone_set("Europe/Rome");
+
 $app = new Silex\Application();
 $app['debug'] = true;
 

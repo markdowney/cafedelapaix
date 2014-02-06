@@ -6,11 +6,16 @@
 
 
 .splash {
-    position: relative;
-    height: 100%;
-	@include full-background-image("../images/cafe.jpg");
+    //position: absolute;
+    //top: 0;
+    //height: 100%;
+	//@include full-background-image("../images/cafe.jpg");
 
-
+    img {
+        //position: relative;
+        width: 100%;
+        height: 100%;
+    }
 
     .logo {
 
@@ -35,10 +40,29 @@
 
 
 .container {
-    margin: 3em auto 5em auto;
+    padding: 3em 0 5em 0;
 }
 
 .full-image {
     width: 100%;
 }
 
+.section-break {
+    width: 200px;
+    margin: 2em auto;
+    border-bottom: 1px solid #d4d4d4;
+}
+
+.contatti {
+    font-size: 18px;
+}
+
+.times {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 2em;
+
+    li {
+        margin: 5px 0;
+    }
+}

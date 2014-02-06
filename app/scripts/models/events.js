@@ -5,8 +5,9 @@ define(["jquery","underscore","json","backbone"],
 
         });
 
-        var EventsCollection = Backbone.Collection.extend({
-            model : Events
+        var Events = Backbone.Collection.extend({
+            model : Event,
+            url : 'http://cafe-de-la-paix.herokuapp.com/events.json'
         });
 
 

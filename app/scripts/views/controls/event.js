@@ -1,4 +1,4 @@
-define(['jquery', 'marionette','text!./events.html'],
+define(['jquery', 'marionette','text!./event.html'],
     function($, Marionette, template){
         'use strict';
 

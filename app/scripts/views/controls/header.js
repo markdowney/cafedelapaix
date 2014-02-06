@@ -4,7 +4,21 @@ define(['jquery', 'marionette','text!./header.html'],
 
         return Marionette.ItemView.extend({
             template : template,
-            className : 'header'
+            className : 'header',
+
+            onRender : function(){
+                
+                this.$el.find('li a').click(function(){
+                    
+                    event.preventDefault();
+                    var target = $(this).attr('href');
+                    console.log(target);
+
+                    $('html, body').animate({
+                         scrollTop: $(target).offset().top - 80
+                     }, 1200);
+                });
+            }
         });
     }
 );

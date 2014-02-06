@@ -34,8 +34,11 @@
 	}
 }
 
-.fb-like {
-	position: absolute !important;
-	bottom: 25px;
-	left: 25px;
+.header {
+	.fb-like {
+		position: fixed !important;
+		top: 30px;
+		right: 25px;
+		z-index: 30;
+	}
 }

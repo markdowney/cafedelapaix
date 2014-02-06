@@ -18,11 +18,13 @@ require.config({
         'backbone.wreqr' : { deps : ['backbone']},
         'backbone.babysitter' : { deps : ['backbone']},
         'json' : {exports: 'JSON'},
-        'handlebars' :  {exports: 'Handlebars'}
+        'handlebars' :  {exports: 'Handlebars'},
+        'image.slider' : { deps : ['jquery']}
     },
 
     paths: {
         jquery: 'vendor/jquery/jquery',
+        'image.slider' : 'lib/jquery.nivo.slider',
         underscore: 'vendor/underscore/underscore',
         backbone: 'vendor/backbone/backbone',
         text : 'vendor/requirejs-text/text',

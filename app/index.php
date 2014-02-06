@@ -5,13 +5,17 @@ require_once __DIR__.'/../vendor/autoload.php';
 use Cdlp\FacebookPage,
     Cdlp\Event;
 
-$app = new Silex\Application();
+use Silex\Application;
 
-$app->get('/', function() use($app) {
-    return $app->sendFile('index.html');
-});
+use Symfony\Component\HttpFoundation\JsonResponse,
+    Symfony\Component\HttpFoundation\Request;
 
-$app->get('/events.json', function() use($app) {
+date_default_timezone_set("Europe/Rome");
+
+$app = new Application();
+$app['debug'] = true;
+
+$app->get('/events.json', function(Application $app, Request $request) {
     $facebookPage = new FacebookPage();
 
     $events = array();
@@ -27,7 +31,10 @@ $app->get('/events.json', function() use($app) {
         $events[] = $event->toArray();
     }
 
-    return $app->json($events);
+    $response = new JsonResponse($events);
+    return $response->setCallback(
+        $request->get('jsonp_callback')
+    );
 });
 
 $app->run();
